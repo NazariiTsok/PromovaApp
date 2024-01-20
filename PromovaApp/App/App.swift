@@ -11,7 +11,10 @@ import SwiftUI
 struct PromovaAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Color.red
+            
+            
+            //USe AppFeature View here
         }
     }
 }

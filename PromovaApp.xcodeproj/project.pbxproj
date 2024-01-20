@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		78FB07662B5C548C00A14C7D /* PromovaAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07652B5C548C00A14C7D /* PromovaAppApp.swift */; };
-		78FB07682B5C548C00A14C7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07672B5C548C00A14C7D /* ContentView.swift */; };
+		78FB07662B5C548C00A14C7D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07652B5C548C00A14C7D /* App.swift */; };
 		78FB076A2B5C548F00A14C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78FB07692B5C548F00A14C7D /* Assets.xcassets */; };
 		78FB076D2B5C548F00A14C7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78FB076C2B5C548F00A14C7D /* Preview Assets.xcassets */; };
 		78FB07772B5C548F00A14C7D /* PromovaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07762B5C548F00A14C7D /* PromovaAppTests.swift */; };
 		78FB07812B5C548F00A14C7D /* PromovaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07802B5C548F00A14C7D /* PromovaAppUITests.swift */; };
 		78FB07832B5C548F00A14C7D /* PromovaAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07822B5C548F00A14C7D /* PromovaAppUITestsLaunchTests.swift */; };
+		78FB07982B5C5C9900A14C7D /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 78FB07972B5C5C9900A14C7D /* AppFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +35,7 @@
 
 /* Begin PBXFileReference section */
 		78FB07622B5C548C00A14C7D /* PromovaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PromovaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		78FB07652B5C548C00A14C7D /* PromovaAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaAppApp.swift; sourceTree = "<group>"; };
-		78FB07672B5C548C00A14C7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		78FB07652B5C548C00A14C7D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		78FB07692B5C548F00A14C7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78FB076C2B5C548F00A14C7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		78FB07722B5C548F00A14C7D /* PromovaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromovaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +43,7 @@
 		78FB077C2B5C548F00A14C7D /* PromovaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromovaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FB07802B5C548F00A14C7D /* PromovaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaAppUITests.swift; sourceTree = "<group>"; };
 		78FB07822B5C548F00A14C7D /* PromovaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		78FB07942B5C590D00A14C7D /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78FB07982B5C5C9900A14C7D /* AppFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +75,12 @@
 		78FB07592B5C548C00A14C7D = {
 			isa = PBXGroup;
 			children = (
+				78FB07942B5C590D00A14C7D /* Modules */,
 				78FB07642B5C548C00A14C7D /* PromovaApp */,
 				78FB07752B5C548F00A14C7D /* PromovaAppTests */,
 				78FB077F2B5C548F00A14C7D /* PromovaAppUITests */,
 				78FB07632B5C548C00A14C7D /* Products */,
+				78FB07962B5C5C9900A14C7D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +97,7 @@
 		78FB07642B5C548C00A14C7D /* PromovaApp */ = {
 			isa = PBXGroup;
 			children = (
-				78FB07652B5C548C00A14C7D /* PromovaAppApp.swift */,
-				78FB07672B5C548C00A14C7D /* ContentView.swift */,
+				78FB07952B5C5A0800A14C7D /* App */,
 				78FB07692B5C548F00A14C7D /* Assets.xcassets */,
 				78FB076B2B5C548F00A14C7D /* Preview Content */,
 			);
@@ -127,6 +129,21 @@
 			path = PromovaAppUITests;
 			sourceTree = "<group>";
 		};
+		78FB07952B5C5A0800A14C7D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				78FB07652B5C548C00A14C7D /* App.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		78FB07962B5C5C9900A14C7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +160,9 @@
 			dependencies = (
 			);
 			name = PromovaApp;
+			packageProductDependencies = (
+				78FB07972B5C5C9900A14C7D /* AppFeature */,
+			);
 			productName = PromovaApp;
 			productReference = 78FB07622B5C548C00A14C7D /* PromovaApp.app */;
 			productType = "com.apple.product-type.application";
@@ -257,8 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78FB07682B5C548C00A14C7D /* ContentView.swift in Sources */,
-				78FB07662B5C548C00A14C7D /* PromovaAppApp.swift in Sources */,
+				78FB07662B5C548C00A14C7D /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +449,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +479,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +609,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		78FB07972B5C5C9900A14C7D /* AppFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 78FB075A2B5C548C00A14C7D /* Project object */;
 }
