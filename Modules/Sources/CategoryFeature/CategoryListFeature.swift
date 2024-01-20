@@ -8,22 +8,17 @@
 import Foundation
 import SwiftUI
 import ComposableArchitecture
-import CategoryFeature
 
-public struct AppFeature: Reducer {
+public struct CategoryListFeature: Reducer {
     public struct State: Equatable {
-       
-        public var categoryList: CategoryListFeature.State
         
-        public init(
-            categoryList: CategoryListFeature.State = .init()
-        ) {
-            self.categoryList = categoryList
+        public init(){
+            
         }
     }
     
     public enum Action: Equatable {
-        case categoryList(CategoryListFeature.Action)
+        
     }
     
     
@@ -37,10 +32,6 @@ public struct AppFeature: Reducer {
             default :
                 return .none
             }
-        }
-        
-        Scope(state: \.categoryList, action: /Action.categoryList) {
-            CategoryListFeature()
         }
     }
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import CategoryFeature
 
 public struct AppView: View {
     let store: StoreOf<AppFeature>
@@ -16,7 +17,15 @@ public struct AppView: View {
     }
     
     public var body: some View {
-       Text("AppFeature!!!")
+        NavigationStack {
+            CategoryListView(
+                store: self.store.scope(
+                    state: \.categoryList,
+                    action: AppFeature.Action.categoryList
+                )
+            )
+        }
+        .tint(.black)
     }
 }
 

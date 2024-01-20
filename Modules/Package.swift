@@ -26,14 +26,23 @@ let package = Package(
             name: "AppFeature",
             dependencies: [
                 "Models",
-                .tca, .swiftUINavigation, .xctest, .swiftCollections
+                "CategoryFeature",
+                .tca, .swiftUINavigation,.swiftCollections
+            ]
+        ),
+        .target(
+            name: "CategoryFeature",
+            dependencies: [
+                "Models",
+                "APIClient",
+                .tca, .swiftUINavigation,.swiftCollections
             ]
         ),
         .target(
             name: "APIClient",
             dependencies: [
                 "Models",
-                .tca, .swiftUINavigation, .xctest, .swiftCollections
+                .tca, .xctest,
             ]
         ),
         .target(
