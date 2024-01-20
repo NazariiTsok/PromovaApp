@@ -44,6 +44,7 @@
 		78FB07802B5C548F00A14C7D /* PromovaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaAppUITests.swift; sourceTree = "<group>"; };
 		78FB07822B5C548F00A14C7D /* PromovaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		78FB07942B5C590D00A14C7D /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
+		78FB07992B5C66A900A14C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		78FB07642B5C548C00A14C7D /* PromovaApp */ = {
 			isa = PBXGroup;
 			children = (
+				78FB07992B5C66A900A14C7D /* Info.plist */,
 				78FB07952B5C5A0800A14C7D /* App */,
 				78FB07692B5C548F00A14C7D /* Assets.xcassets */,
 				78FB076B2B5C548F00A14C7D /* Preview Content */,
@@ -444,6 +446,7 @@
 				DEVELOPMENT_TEAM = W275D9JUNP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PromovaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -474,6 +477,7 @@
 				DEVELOPMENT_TEAM = W275D9JUNP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PromovaApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
