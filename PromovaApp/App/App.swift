@@ -6,15 +6,19 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+import AppFeature
 
 @main
 struct PromovaAppApp: App {
     var body: some Scene {
         WindowGroup {
-            Color.red
-            
-            
-            //USe AppFeature View here
+            AppView(
+                store: .init(
+                    initialState: AppFeature.State(),
+                    reducer: { AppFeature() }
+                )
+            )
         }
     }
 }
