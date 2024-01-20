@@ -15,6 +15,13 @@ extension URL {
     }
 }
 
+extension DependencyValues {
+    public var apiClient: APIClient {
+        get { self[APIClient.self] }
+        set { self[APIClient.self] = newValue }
+    }
+}
+
 extension APIClient: DependencyKey {
     public static var liveValue: APIClient  {
         guard let urlString = Bundle.main.infoDictionary?["RepositoryURL"] as? String,

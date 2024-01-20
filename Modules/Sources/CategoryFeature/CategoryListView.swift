@@ -17,7 +17,18 @@ public struct CategoryListView: View {
     }
     
     public var body: some View {
-       Text("CategoryListFeature!!!")
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            ZStack {
+                List {
+                    ForEach(viewStore.content.elements ?? []) { category in
+                        Text(category.title)
+                    }
+                }
+            }
+            .onAppear {
+                viewStore.send(.view(.onAppear))
+            }
+        }
     }
 }
 

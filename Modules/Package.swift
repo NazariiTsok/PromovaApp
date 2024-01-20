@@ -27,6 +27,7 @@ let package = Package(
             dependencies: [
                 "Models",
                 "CategoryFeature",
+                "Extensions",
                 .tca, .swiftUINavigation,.swiftCollections
             ]
         ),
@@ -35,6 +36,8 @@ let package = Package(
             dependencies: [
                 "Models",
                 "APIClient",
+                "Extensions",
+                "SharedViews",
                 .tca, .swiftUINavigation,.swiftCollections
             ]
         ),
@@ -43,6 +46,18 @@ let package = Package(
             dependencies: [
                 "Models",
                 .tca, .xctest,
+            ]
+        ),
+        .target(
+            name: "SharedViews",
+            dependencies: [
+                
+            ]
+        ),
+        .target(
+            name: "Extensions",
+            dependencies: [
+                "Models"
             ]
         ),
         .target(
