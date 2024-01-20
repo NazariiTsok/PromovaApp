@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78FB07662B5C548C00A14C7D /* PromovaAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07652B5C548C00A14C7D /* PromovaAppApp.swift */; };
+		78FB07682B5C548C00A14C7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07672B5C548C00A14C7D /* ContentView.swift */; };
+		78FB076A2B5C548F00A14C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78FB07692B5C548F00A14C7D /* Assets.xcassets */; };
+		78FB076D2B5C548F00A14C7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78FB076C2B5C548F00A14C7D /* Preview Assets.xcassets */; };
+		78FB07772B5C548F00A14C7D /* PromovaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07762B5C548F00A14C7D /* PromovaAppTests.swift */; };
+		78FB07812B5C548F00A14C7D /* PromovaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07802B5C548F00A14C7D /* PromovaAppUITests.swift */; };
+		78FB07832B5C548F00A14C7D /* PromovaAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB07822B5C548F00A14C7D /* PromovaAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78FB07732B5C548F00A14C7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78FB075A2B5C548C00A14C7D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78FB07612B5C548C00A14C7D;
+			remoteInfo = PromovaApp;
+		};
+		78FB077D2B5C548F00A14C7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78FB075A2B5C548C00A14C7D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78FB07612B5C548C00A14C7D;
+			remoteInfo = PromovaApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		78FB07622B5C548C00A14C7D /* PromovaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PromovaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78FB07652B5C548C00A14C7D /* PromovaAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaAppApp.swift; sourceTree = "<group>"; };
+		78FB07672B5C548C00A14C7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		78FB07692B5C548F00A14C7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78FB076C2B5C548F00A14C7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		78FB07722B5C548F00A14C7D /* PromovaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromovaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78FB07762B5C548F00A14C7D /* PromovaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaAppTests.swift; sourceTree = "<group>"; };
+		78FB077C2B5C548F00A14C7D /* PromovaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromovaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78FB07802B5C548F00A14C7D /* PromovaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaAppUITests.swift; sourceTree = "<group>"; };
+		78FB07822B5C548F00A14C7D /* PromovaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromovaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78FB075F2B5C548C00A14C7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78FB076F2B5C548F00A14C7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78FB07792B5C548F00A14C7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78FB07592B5C548C00A14C7D = {
+			isa = PBXGroup;
+			children = (
+				78FB07642B5C548C00A14C7D /* PromovaApp */,
+				78FB07752B5C548F00A14C7D /* PromovaAppTests */,
+				78FB077F2B5C548F00A14C7D /* PromovaAppUITests */,
+				78FB07632B5C548C00A14C7D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78FB07632B5C548C00A14C7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78FB07622B5C548C00A14C7D /* PromovaApp.app */,
+				78FB07722B5C548F00A14C7D /* PromovaAppTests.xctest */,
+				78FB077C2B5C548F00A14C7D /* PromovaAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78FB07642B5C548C00A14C7D /* PromovaApp */ = {
+			isa = PBXGroup;
+			children = (
+				78FB07652B5C548C00A14C7D /* PromovaAppApp.swift */,
+				78FB07672B5C548C00A14C7D /* ContentView.swift */,
+				78FB07692B5C548F00A14C7D /* Assets.xcassets */,
+				78FB076B2B5C548F00A14C7D /* Preview Content */,
+			);
+			path = PromovaApp;
+			sourceTree = "<group>";
+		};
+		78FB076B2B5C548F00A14C7D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				78FB076C2B5C548F00A14C7D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		78FB07752B5C548F00A14C7D /* PromovaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				78FB07762B5C548F00A14C7D /* PromovaAppTests.swift */,
+			);
+			path = PromovaAppTests;
+			sourceTree = "<group>";
+		};
+		78FB077F2B5C548F00A14C7D /* PromovaAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				78FB07802B5C548F00A14C7D /* PromovaAppUITests.swift */,
+				78FB07822B5C548F00A14C7D /* PromovaAppUITestsLaunchTests.swift */,
+			);
+			path = PromovaAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78FB07612B5C548C00A14C7D /* PromovaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78FB07862B5C549000A14C7D /* Build configuration list for PBXNativeTarget "PromovaApp" */;
+			buildPhases = (
+				78FB075E2B5C548C00A14C7D /* Sources */,
+				78FB075F2B5C548C00A14C7D /* Frameworks */,
+				78FB07602B5C548C00A14C7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PromovaApp;
+			productName = PromovaApp;
+			productReference = 78FB07622B5C548C00A14C7D /* PromovaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		78FB07712B5C548F00A14C7D /* PromovaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78FB07892B5C549000A14C7D /* Build configuration list for PBXNativeTarget "PromovaAppTests" */;
+			buildPhases = (
+				78FB076E2B5C548F00A14C7D /* Sources */,
+				78FB076F2B5C548F00A14C7D /* Frameworks */,
+				78FB07702B5C548F00A14C7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78FB07742B5C548F00A14C7D /* PBXTargetDependency */,
+			);
+			name = PromovaAppTests;
+			productName = PromovaAppTests;
+			productReference = 78FB07722B5C548F00A14C7D /* PromovaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		78FB077B2B5C548F00A14C7D /* PromovaAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78FB078C2B5C549000A14C7D /* Build configuration list for PBXNativeTarget "PromovaAppUITests" */;
+			buildPhases = (
+				78FB07782B5C548F00A14C7D /* Sources */,
+				78FB07792B5C548F00A14C7D /* Frameworks */,
+				78FB077A2B5C548F00A14C7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78FB077E2B5C548F00A14C7D /* PBXTargetDependency */,
+			);
+			name = PromovaAppUITests;
+			productName = PromovaAppUITests;
+			productReference = 78FB077C2B5C548F00A14C7D /* PromovaAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78FB075A2B5C548C00A14C7D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					78FB07612B5C548C00A14C7D = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					78FB07712B5C548F00A14C7D = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 78FB07612B5C548C00A14C7D;
+					};
+					78FB077B2B5C548F00A14C7D = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 78FB07612B5C548C00A14C7D;
+					};
+				};
+			};
+			buildConfigurationList = 78FB075D2B5C548C00A14C7D /* Build configuration list for PBXProject "PromovaApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 78FB07592B5C548C00A14C7D;
+			productRefGroup = 78FB07632B5C548C00A14C7D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78FB07612B5C548C00A14C7D /* PromovaApp */,
+				78FB07712B5C548F00A14C7D /* PromovaAppTests */,
+				78FB077B2B5C548F00A14C7D /* PromovaAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78FB07602B5C548C00A14C7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78FB076D2B5C548F00A14C7D /* Preview Assets.xcassets in Resources */,
+				78FB076A2B5C548F00A14C7D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78FB07702B5C548F00A14C7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78FB077A2B5C548F00A14C7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78FB075E2B5C548C00A14C7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78FB07682B5C548C00A14C7D /* ContentView.swift in Sources */,
+				78FB07662B5C548C00A14C7D /* PromovaAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78FB076E2B5C548F00A14C7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78FB07772B5C548F00A14C7D /* PromovaAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78FB07782B5C548F00A14C7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78FB07812B5C548F00A14C7D /* PromovaAppUITests.swift in Sources */,
+				78FB07832B5C548F00A14C7D /* PromovaAppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78FB07742B5C548F00A14C7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78FB07612B5C548C00A14C7D /* PromovaApp */;
+			targetProxy = 78FB07732B5C548F00A14C7D /* PBXContainerItemProxy */;
+		};
+		78FB077E2B5C548F00A14C7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78FB07612B5C548C00A14C7D /* PromovaApp */;
+			targetProxy = 78FB077D2B5C548F00A14C7D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		78FB07842B5C548F00A14C7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		78FB07852B5C548F00A14C7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78FB07872B5C549000A14C7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PromovaApp/Preview Content\"";
+				DEVELOPMENT_TEAM = W275D9JUNP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = promova.PromovaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78FB07882B5C549000A14C7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PromovaApp/Preview Content\"";
+				DEVELOPMENT_TEAM = W275D9JUNP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = promova.PromovaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		78FB078A2B5C549000A14C7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W275D9JUNP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = promova.PromovaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PromovaApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PromovaApp";
+			};
+			name = Debug;
+		};
+		78FB078B2B5C549000A14C7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W275D9JUNP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = promova.PromovaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PromovaApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PromovaApp";
+			};
+			name = Release;
+		};
+		78FB078D2B5C549000A14C7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W275D9JUNP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = promova.PromovaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PromovaApp;
+			};
+			name = Debug;
+		};
+		78FB078E2B5C549000A14C7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W275D9JUNP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = promova.PromovaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PromovaApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78FB075D2B5C548C00A14C7D /* Build configuration list for PBXProject "PromovaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78FB07842B5C548F00A14C7D /* Debug */,
+				78FB07852B5C548F00A14C7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78FB07862B5C549000A14C7D /* Build configuration list for PBXNativeTarget "PromovaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78FB07872B5C549000A14C7D /* Debug */,
+				78FB07882B5C549000A14C7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78FB07892B5C549000A14C7D /* Build configuration list for PBXNativeTarget "PromovaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78FB078A2B5C549000A14C7D /* Debug */,
+				78FB078B2B5C549000A14C7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78FB078C2B5C549000A14C7D /* Build configuration list for PBXNativeTarget "PromovaAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78FB078D2B5C549000A14C7D /* Debug */,
+				78FB078E2B5C549000A14C7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78FB075A2B5C548C00A14C7D /* Project object */;
+}
