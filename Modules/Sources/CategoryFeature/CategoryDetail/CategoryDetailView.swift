@@ -64,7 +64,7 @@ public struct CategoryDetailView: View {
             }
             .padding(.horizontal)
             .padding(.top, 40)
-            .padding(.bottom, 60)
+            .padding(.bottom, 100)
         }
         .navigationTitle(viewStore.currentPageTitle)
         .navigationBarTitleDisplayMode(.inline)
