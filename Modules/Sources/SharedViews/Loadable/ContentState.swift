@@ -57,6 +57,7 @@ public struct ErrorState<A>: Equatable {
         self.title = title
         self.body = body
         self.error = error
+        self.action = action
     }
     
     public struct Action: Equatable {
