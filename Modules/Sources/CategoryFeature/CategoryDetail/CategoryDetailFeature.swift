@@ -11,45 +11,44 @@ import ComposableArchitecture
 import Models
 
 public struct CategoryDetailFeature: Reducer {
-    public struct State: Equatable {
+    public struct State: Equatable, Identifiable {
         
-        public var category: CategoryModel
+        public var id: CategoryModel.ID
         
         public var currentTitle: String
-        public var currentIndex: Int
-        public var currentItems: [FactModel]
+        public var currentIndex: Int = 0
         
-        public var selectedItem: FactModel?
-        public var focusedItem: FactModel?
+        public var cells:IdentifiedArrayOf<CategoryDetailCellFeature.State>
         
         public init(
             category: CategoryModel
         ) {
-            self.category = category
+            self.id = category.id
             self.currentTitle = category.title
             
-            self.currentItems = category.facts
-            self.currentIndex = category.facts.startIndex
-            
+            self.cells = IdentifiedArray(
+                uniqueElements: category.facts.enumerated().map { index, fact in
+                    CategoryDetailCellFeature.State(item: fact, index: index)
+                }
+            )
         }
         
-        var isPreviousItemEnabled:Bool {
+        public var isPreviousItemEnabled:Bool {
             self.currentIndex > 0
         }
         
-        var isNextItemEnabled:Bool {
-            self.currentIndex < self.currentItems.count - 1
+        public var isNextItemEnabled:Bool {
+            self.currentIndex < self.cells.count - 1
         }
     }
     
     public enum Action: Equatable {
+        case currentIndexUpdated(Int)
+        
         case nextItemButtonTapped
         case previousItemButtonTapped
         
-        case currentIndexUpdated(Int)
-        case currentItemsUpdated([FactModel])
-        case selectedItemUpdated(FactModel)
-        case focusedItemUpdated(FactModel)
+        case cells(id: CategoryDetailCellFeature.State.ID, action: CategoryDetailCellFeature.Action)
     }
     
     
@@ -58,38 +57,23 @@ public struct CategoryDetailFeature: Reducer {
     public var body: some ReducerOf<Self> {
         Reduce { state , action in
             switch action {
-            case .nextItemButtonTapped, .previousItemButtonTapped:
-                return handleItemNavigation(action, state: &state)
-            case .currentIndexUpdated(let newIndex):
+            case .nextItemButtonTapped:
+                if state.isNextItemEnabled {
+                    state.currentIndex += 1
+                }
+                return .none
+            case .previousItemButtonTapped:
+                if state.isPreviousItemEnabled {
+                    state.currentIndex -= 1
+                }
+                return .none
+            case let .currentIndexUpdated(newIndex):
                 state.currentIndex = newIndex
+                print("CurrentIndex : \(state.currentIndex)")
                 return .none
-            case .currentItemsUpdated(let newItems):
-                state.currentItems = newItems
-                return .none
-            case .selectedItemUpdated(let newSelectedItem):
-                state.selectedItem = newSelectedItem
-                return .none
-            case .focusedItemUpdated(let newFocusedItem):
-                state.focusedItem = newFocusedItem
+            default :
                 return .none
             }
-        }
-    }
-    
-    private func handleItemNavigation(_ action: Action, state: inout State) -> Effect<Action> {
-        switch action {
-        case .previousItemButtonTapped:
-            if state.isPreviousItemEnabled {
-                state.currentIndex -= 1
-            }
-            return .none
-        case .nextItemButtonTapped:
-            if state.isNextItemEnabled {
-                state.currentIndex += 1
-            }
-            return .none
-        default :
-            return .none
         }
     }
 }
