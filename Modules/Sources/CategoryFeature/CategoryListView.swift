@@ -10,6 +10,7 @@ import SwiftUI
 import ComposableArchitecture
 import Models
 import SharedViews
+import Extensions
 
 public struct CategoryListView: View {
     let store: StoreOf<CategoryListFeature>
@@ -43,7 +44,8 @@ public struct CategoryListView: View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVStack(spacing: 15) {
                 ForEach(categories, id: \.id) { category in
-                    Text(category.title)
+                    CategoryRowView(category: category)
+                    
                 }
             }
             .padding(.all)
@@ -51,6 +53,8 @@ public struct CategoryListView: View {
         }
         .navigationTitle("Categories")
         .navigationBarTitleDisplayMode(.inline)
+        .background(Color.main)
+        .toolbarBackground(Color.main, for: .navigationBar)
     }
     
     @ViewBuilder

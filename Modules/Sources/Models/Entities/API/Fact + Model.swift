@@ -23,15 +23,6 @@ public struct FactModel: Identifiable, Equatable, Sendable  {
     }
 }
 
-extension FactModel {
-    static let mock: [FactModel] = [
-        .init(id: "f1", fact: "Interesting Fact 1", image: "https://cdn2.thecatapi.com/images/5op.jpg"),
-        .init(id: "f2", fact: "Interesting Fact 2", image: "https://cdn2.thecatapi.com/images/b8j.jpg"),
-        .init(id: "f3", fact: "Interesting Fact 3", image: "https://cdn2.thecatapi.com/images/bgr.jpg"),
-    ]
-}
-
-
 extension FactModel : Decodable {
     enum CodingKeys: String, CodingKey {
         case fact
@@ -48,3 +39,12 @@ extension FactModel : Decodable {
     }
 }
 
+#if DEBUG
+extension FactModel {
+    public static let mock: [FactModel] = [
+        .init(id: "f1", fact: "Interesting Fact 1", image: "https://cdn2.thecatapi.com/images/5op.jpg"),
+        .init(id: "f2", fact: "Interesting Fact 2", image: "https://cdn2.thecatapi.com/images/b8j.jpg"),
+        .init(id: "f3", fact: "Interesting Fact 3", image: "https://cdn2.thecatapi.com/images/bgr.jpg"),
+    ]
+}
+#endif

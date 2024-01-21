@@ -51,7 +51,7 @@ let package = Package(
         .target(
             name: "SharedViews",
             dependencies: [
-                
+                "Models",
             ]
         ),
         .target(

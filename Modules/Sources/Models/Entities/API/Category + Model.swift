@@ -51,7 +51,7 @@ extension CategoryModel : Decodable {
         case image
         case order
         case status
-        case facts
+        case content
     }
     
     public init(from decoder: Decoder) throws {
@@ -63,7 +63,8 @@ extension CategoryModel : Decodable {
         self.description = try container.decode(String.self, forKey: .description)
         self.image = try container.decode(String.self, forKey: .image)
         self.order = try container.decode(Int.self, forKey: .order)
-        self.facts = try container.decodeIfPresent([FactModel].self, forKey: .facts) ?? []
+        self.facts = try container.decodeIfPresent([FactModel].self, forKey: .content) ?? []
+    
         self.status = facts.isEmpty ? .comingSoon : try container.decode(Status.self, forKey: .status)
     }
 }
@@ -71,34 +72,35 @@ extension CategoryModel : Decodable {
 
 #if DEBUG
 extension CategoryModel {
-    static let mock: [CategoryModel] = [
-        .init(
-            id: "1",
-            title: "Category 1",
-            description: "Description 1",
-            image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg",
-            order: 1,
-            status: .free,
-            facts: FactModel.mock
-        ),
-        .init(
-            id: "2",
-            title: "Category 2",
-            description: "Description 2",
-            image: "https://static.wikia.nocookie.net/monster/images/6/6e/DragonRed.jpg/",
-            order: 1,
-            status: .paid,
-            facts: FactModel.mock
-        ),
-        .init(
-            id: "3",
-            title: "Category 3",
-            description: "Description 3",
-            image: "https://images6.alphacoders.com/337/337780.jpg",
-            order: 1,
-            status: .comingSoon,
-            facts: FactModel.mock
-        ),
-    ]
+    public static var mock1 = CategoryModel(
+        id: "1",
+        title: "Category 1",
+        description: "Description 1",
+        image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg",
+        order: 1,
+        status: .free,
+        facts: FactModel.mock
+    )
+
+    public static var mock2 = CategoryModel(
+        id: "2",
+        title: "Category 2",
+        description: "Description 2",
+        image: "https://static.wikia.nocookie.net/monster/images/6/6e/DragonRed.jpg/",
+        order: 1,
+        status: .paid,
+        facts: FactModel.mock
+    )
+
+    public static var mock3 = CategoryModel(
+        id: "3",
+        title: "Category 3",
+        description: "Description 3",
+        image: "https://images6.alphacoders.com/337/337780.jpg",
+        order: 1,
+        status: .comingSoon,
+        facts: FactModel.mock
+    )
 }
 #endif
+
