@@ -53,8 +53,15 @@ public struct CategoryListView: View {
                 action: CategoryListFeature.Destination.Action.detail,
                 destination: CategoryDetailView.init
             )
+            .fullScreenCover(
+                isPresented: viewStore.binding(
+                    get: \.isAdvertPresented,
+                    send: .adWatched
+                )
+            ) {
+                ProgressView()
+            }
         }
-        
     }
     
     @ViewBuilder

@@ -44,13 +44,16 @@ public struct CategoryListFeature: Reducer {
         @PresentationState public var destination: Destination.State?
         
         public var content: ContentState<IdentifiedArrayOf<CategoryModel>, Action>
+        public var isAdvertPresented:Bool
         
         public init(
             content: ContentState<IdentifiedArrayOf<CategoryModel>, Action> = .initial,
-            destination: Destination.State? = nil
+            destination: Destination.State? = nil,
+            isAdvertPresented:Bool = false
         ){
             self.content = content
             self.destination = destination
+            self.isAdvertPresented = isAdvertPresented
         }
     }
     
@@ -66,10 +69,11 @@ public struct CategoryListFeature: Reducer {
             case loadCategories
             case categoriesLoaded(TaskResult<[CategoryModel]>)
         }
-        
-        //Navigation Actions
-        
+                
         case navigateTo(CategoryModel)
+        
+        case adWatched
+        case didAdWatched(CategoryModel)
     }
     
     public init(){
@@ -88,6 +92,9 @@ public struct CategoryListFeature: Reducer {
             case let .navigateTo(category):
                 state.destination = .detail(CategoryDetailFeature.State(category: category))
                 return .none
+            case let .didAdWatched(category):
+                state.isAdvertPresented = false
+                return Effect.send(.navigateTo(category))
             default :
                 return .none
             }
@@ -142,10 +149,30 @@ public struct CategoryListFeature: Reducer {
     }
     
     private func handleDestinationAction(_ action: PresentationAction<Destination.Action>, state: inout State) -> Effect<Action> {
-        return .none
+        guard case let .presented(action) = action else { return .none }
+        
+        switch action {
+        case let .alert(action):
+            return handleAlertAction(action, state: &state)
+        case let .detail(action):
+            return handleDetailAction(action, state: &state)
+        }
     }
     
     private func handleAlertAction(_ action: Destination.Action.Alert, state: inout State) -> Effect<Action> {
+        switch action {
+        case .showAd(let category): //MARK: Simulate Ad
+            state.isAdvertPresented = true
+            
+            return .run { send in
+                try await Task.sleep(for: .seconds(2))
+                
+                await send(.didAdWatched(category))
+            }
+        }
+    }
+    
+    private func handleDetailAction(_ action: CategoryDetailFeature.Action, state _: inout State) -> Effect<Action> {
         return .none
     }
 }
