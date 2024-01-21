@@ -17,6 +17,7 @@ let package = Package(
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture",  from: "1.0.0"),
         .package(url: "https://github.com/pointfreeco/swiftui-navigation", from: "1.0.0"),
         .package(url: "https://github.com/pointfreeco/xctest-dynamic-overlay", from: "1.0.0"),
+        .package(url: "https://github.com/Kolos65/RealmRepository", branch: "main")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -35,9 +36,10 @@ let package = Package(
             name: "CategoryFeature",
             dependencies: [
                 "Models",
-                "APIClient",
+                "APIClient", //TODO: remove from this
                 "Extensions",
                 "SharedViews",
+                "CategoryClient",
                 .tca, .swiftUINavigation,.swiftCollections
             ]
         ),
@@ -49,9 +51,18 @@ let package = Package(
             ]
         ),
         .target(
+            name: "CategoryClient",
+            dependencies: [
+                "Models",
+                "APIClient",
+                .tca, .xctest, .realm
+            ]
+        ),
+        .target(
             name: "SharedViews",
             dependencies: [
                 "Models",
+                
             ]
         ),
         .target(
@@ -63,10 +74,9 @@ let package = Package(
         .target(
             name: "Models",
             dependencies: [
-                
+                .realm
             ]
         ),
-        
         
             .testTarget(
                 name: "AppFeatureTests",
@@ -80,4 +90,6 @@ private extension Target.Dependency {
     static let swiftCollections: Self = .product(name: "Collections", package: "swift-collections")
     static let swiftUINavigation: Self = .product(name: "SwiftUINavigation", package: "swiftui-navigation")
     static let xctest: Self = .product(name: "XCTestDynamicOverlay", package: "xctest-dynamic-overlay")
+    static let realm: Self = .product(name: "RealmRepository", package: "RealmRepository")
+
 }

@@ -27,8 +27,8 @@ public struct CategoryDetailCellView : View {
                 VStack {
                     AsyncImageView(url: URL(string: viewStore.image)!)
                         .frame(height: geometry.size.height * 0.35)
-                        .aspectRatio(contentMode: .fill)
-                        .fixedSize(horizontal: false, vertical: true)
+//                        .aspectRatio(contentMode: .fill)
+//                        .fixedSize(horizontal: false, vertical: true)
                         .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                         .clipped()
                         .padding(10)
@@ -47,7 +47,7 @@ public struct CategoryDetailCellView : View {
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
             }
-            .tag(viewStore.index)
+            .tag(viewStore.id)
         }
     }
 }

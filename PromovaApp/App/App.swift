@@ -8,17 +8,15 @@
 import SwiftUI
 import ComposableArchitecture
 import AppFeature
+import RealmRepository
 
 @main
 struct PromovaAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            AppView(
-                store: .init(
-                    initialState: AppFeature.State(),
-                    reducer: { AppFeature() }
-                )
-            )
+            AppView(store: self.appDelegate.store)
         }
     }
 }

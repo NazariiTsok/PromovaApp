@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D7DE8C59-8E55-4A1D-AD3D-E76C9CE57538"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60481FCB-496E-4054-AA7A-54780FCA55B2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Sources/CategoryFeature/CategoryListFeature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "handleViewAction(_:state:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "60481FCB-496E-4054-AA7A-54780FCA55B2 - 7ba0babfb6f27cf2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CategoryFeature.CategoryListFeature.handleViewAction(_: CategoryFeature.CategoryListFeature.Action.ViewAction, state: inout CategoryFeature.CategoryListFeature.State) -&gt; ComposableArchitecture.Effect&lt;CategoryFeature.CategoryListFeature.Action&gt;"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryFeature/CategoryListFeature.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "5151">
+               </Location>
+               <Location
+                  uuid = "60481FCB-496E-4054-AA7A-54780FCA55B2 - 7ba0babfb6f27cf2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CategoryFeature.CategoryListFeature.handleViewAction(_: CategoryFeature.CategoryListFeature.Action.ViewAction, state: inout CategoryFeature.CategoryListFeature.State) -&gt; ComposableArchitecture.Effect&lt;CategoryFeature.CategoryListFeature.Action&gt;"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryFeature/CategoryListFeature.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "3956">
+               </Location>
+               <Location
+                  uuid = "60481FCB-496E-4054-AA7A-54780FCA55B2 - 7ba0babfb6f27feb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CategoryFeature.CategoryListFeature.handleViewAction(_: CategoryFeature.CategoryListFeature.Action.ViewAction, state: inout CategoryFeature.CategoryListFeature.State) -&gt; ComposableArchitecture.Effect&lt;CategoryFeature.CategoryListFeature.Action&gt;"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryFeature/CategoryListFeature.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "3938">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Sources/CategoryClient/Live.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "load()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924 - 2a6d17c6e4008d93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CategoryClient.CategoryClient.load() async throws -&gt; ()"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryClient/Live.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "230">
+               </Location>
+               <Location
+                  uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924 - 24b33d3fc9b7c791"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for CategoryClient.CategoryClient.load() async throws -&gt; ()"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryClient/Live.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924 - 31814a78db5b3997"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for CategoryClient.CategoryClient.load() async throws -&gt; ()"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryClient/Live.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924 - 2d697b1acce7395"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for CategoryClient.CategoryClient.load() async throws -&gt; ()"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryClient/Live.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924 - 9b3e9baf651788c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for CategoryClient.CategoryClient.load() async throws -&gt; ()"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryClient/Live.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924 - 24b33d3fc9b7c7b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for CategoryClient.CategoryClient.load() async throws -&gt; ()"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryClient/Live.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "235">
+               </Location>
+               <Location
+                  uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924 - 31814a78db5b39b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for CategoryClient.CategoryClient.load() async throws -&gt; ()"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryClient/Live.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "165">
+               </Location>
+               <Location
+                  uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924 - 2d697b1acce73b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for CategoryClient.CategoryClient.load() async throws -&gt; ()"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryClient/Live.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924 - 4c30efdb582e04f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(12) suspend resume partial function for CategoryClient.CategoryClient.load() async throws -&gt; ()"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryClient/Live.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "89">
+               </Location>
+               <Location
+                  uuid = "783BA8D8-DD61-4C9B-868C-4CCA29887924 - ebb726112ddd7efe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(13) suspend resume partial function for CategoryClient.CategoryClient.load() async throws -&gt; ()"
+                  moduleName = "PromovaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nazar/Projects/PromovaApp/Modules/Sources/CategoryClient/Live.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "89">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E034FB7-2B8C-4937-B9CC-4CB192EE70D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Modules/Sources/CategoryFeature/CategoryDetail/CategoryDetailFeature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "init(category:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

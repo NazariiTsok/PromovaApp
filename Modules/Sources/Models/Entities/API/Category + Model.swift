@@ -7,8 +7,14 @@
 
 import Foundation
 
-public struct CategoryModel: Identifiable, Equatable, Sendable {
-    public let id: String
+extension CategoryModel: Identifiable {
+    public var id: String {
+        self.title
+    }
+}
+
+public struct CategoryModel:Equatable, Sendable {
+    
     public let title: String
     public let description: String
     public let image: String
@@ -17,7 +23,6 @@ public struct CategoryModel: Identifiable, Equatable, Sendable {
     public let facts: [FactModel]
     
     public init(
-        id: String,
         title: String,
         description: String,
         image: String,
@@ -25,7 +30,6 @@ public struct CategoryModel: Identifiable, Equatable, Sendable {
         status: CategoryModel.Status,
         facts: [FactModel]
     ) {
-        self.id = id
         self.title = title
         self.description = description
         self.image = image
@@ -56,9 +60,7 @@ extension CategoryModel : Decodable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        self.id = UUID().uuidString
-        
+            
         self.title = try container.decode(String.self, forKey: .title)
         self.description = try container.decode(String.self, forKey: .description)
         self.image = try container.decode(String.self, forKey: .image)
@@ -73,7 +75,6 @@ extension CategoryModel : Decodable {
 #if DEBUG
 extension CategoryModel {
     public static var mock1 = CategoryModel(
-        id: "1",
         title: "Category 1",
         description: "Description 1",
         image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg",
@@ -83,7 +84,6 @@ extension CategoryModel {
     )
 
     public static var mock2 = CategoryModel(
-        id: "2",
         title: "Category 2",
         description: "Description 2",
         image: "https://static.wikia.nocookie.net/monster/images/6/6e/DragonRed.jpg/",
@@ -93,7 +93,6 @@ extension CategoryModel {
     )
 
     public static var mock3 = CategoryModel(
-        id: "3",
         title: "Category 3",
         description: "Description 3",
         image: "https://images6.alphacoders.com/337/337780.jpg",

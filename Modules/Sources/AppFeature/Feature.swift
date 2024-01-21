@@ -12,18 +12,21 @@ import CategoryFeature
 
 public struct AppFeature: Reducer {
     public struct State: Equatable {
-       
+        public var appDelegate: AppDelegateFeature.State
         public var categoryList: CategoryListFeature.State
         
         public init(
+            appDelegate: AppDelegateFeature.State = .init(),
             categoryList: CategoryListFeature.State = .init()
         ) {
+            self.appDelegate = appDelegate
             self.categoryList = categoryList
         }
     }
     
     public enum Action: Equatable {
         case categoryList(CategoryListFeature.Action)
+        case appDelegate(AppDelegateFeature.Action)
     }
     
     
@@ -41,6 +44,10 @@ public struct AppFeature: Reducer {
         
         Scope(state: \.categoryList, action: /Action.categoryList) {
             CategoryListFeature()
+        }
+        
+        Scope(state: \.appDelegate, action: /Action.appDelegate) {
+            AppDelegateFeature()
         }
     }
 }

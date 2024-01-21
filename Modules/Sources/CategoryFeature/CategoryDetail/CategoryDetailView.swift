@@ -22,7 +22,10 @@ public struct CategoryDetailView: View {
             ZStack {
                 VStack {
                     TabView(
-                        selection: viewStore.binding(get: \.currentIndex, send: { .currentIndexUpdated($0) })
+                        selection: viewStore.binding(
+                            get: \.currentIndex,
+                            send: { .currentIndexUpdated($0) }
+                        )
                     ) {
                         ForEachStore(
                             self.store.scope(
@@ -39,7 +42,8 @@ public struct CategoryDetailView: View {
                     .overlay(alignment: .bottom) {
                         HStack(alignment : .center) {
                             Button {
-                                store.send(.previousItemButtonTapped, animation: .interactiveSpring)
+                                viewStore.send(.previousItemButtonTapped, animation: .interactiveSpring)
+
                             } label: {
                                 Image(systemName: "chevron.left")
                             }
@@ -48,7 +52,7 @@ public struct CategoryDetailView: View {
                             Spacer()
                             
                             Button {
-                                store.send(.nextItemButtonTapped, animation: .interactiveSpring)
+                                viewStore.send(.nextItemButtonTapped, animation: .interactiveSpring)
                             } label: {
                                 Image(systemName: "chevron.right")
                             }

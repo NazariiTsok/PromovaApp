@@ -13,7 +13,9 @@ import Models
 public struct CategoryDetailCellFeature: Reducer {
     public struct State: Equatable, Identifiable {
         
-        public var id: FactModel.ID
+        public var id: Int {
+            self.index
+        }
         
         public let index: Int
         public let image: String
@@ -23,8 +25,6 @@ public struct CategoryDetailCellFeature: Reducer {
             item: FactModel,
             index: Int
         ){
-            self.id = item.id
-            
             self.index = index
             self.image = item.image
             self.title = item.fact

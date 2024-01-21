@@ -26,7 +26,7 @@ public struct CategoryRowView: View {
             HStack(alignment: .top, spacing: .zero) {
                 AsyncImageView(url: URL(string: category.image)!)
                     .frame(width: 121, height: 90)
-                    .aspectRatio(contentMode: .fill)
+                    
                     .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                     .clipped()
                 

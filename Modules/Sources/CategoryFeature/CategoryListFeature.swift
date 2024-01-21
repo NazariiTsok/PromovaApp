@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Nazar Tsok on 20.01.2024.
 //
@@ -11,14 +11,13 @@ import ComposableArchitecture
 import APIClient
 import Models
 import SharedViews
+import CategoryClient
 
 extension CategoryListFeature {
     public struct Destination: Reducer {
         public enum State: Equatable {
             case detail(CategoryDetailFeature.State)
             case alert(AlertState<Action.Alert>)
-        
-            //Add DetailFeature for navigation destination push
         }
         
         public enum Action: Equatable {
@@ -68,8 +67,9 @@ public struct CategoryListFeature: Reducer {
             
             case loadCategories
             case categoriesLoaded(TaskResult<[CategoryModel]>)
+            
         }
-                
+        
         case navigateTo(CategoryModel)
         
         case adWatched
@@ -79,8 +79,13 @@ public struct CategoryListFeature: Reducer {
     public init(){
         
     }
-
+    
+    enum CancelID: Hashable {
+        case observation
+    }
+    
     @Dependency(\.apiClient) var apiClient
+    @Dependency(\.categoryClient) var categoryClient
     
     public var body: some ReducerOf<Self> {
         Reduce { state , action in
@@ -108,17 +113,34 @@ public struct CategoryListFeature: Reducer {
         switch action {
         case .onAppear:
             if state.content == .initial {
-                return Effect.send(.view(.loadCategories))
+                
+                
+                
+                return Effect.run { send in
+                    try await Task.sleep(for: .seconds(2))
+                    
+                    await send(.view(.loadCategories))
+                }
             }
             return .none
         case .loadCategories:
             state.content = .loading
             
-            return .run { send in
-                await send(.view(.categoriesLoaded(TaskResult {
-                    try await apiClient.fetchCategories()
-                })))
-            }
+            return .merge(
+                .run { send in
+                    for try await categories in categoryClient.observation() {
+                        await send(.view(.categoriesLoaded(.success(categories))))
+                    }
+                    
+                } catch: { error, send in
+                    await send(.view(.categoriesLoaded(.failure(error))))
+                },
+                .run { _  in
+                   try await categoryClient.load()
+                }
+                
+            )
+            .cancellable(id: CancelID.observation, cancelInFlight: true)
         case let .categoriesLoaded(.success(value)):
             // Early exit if no categories are loaded
             guard !value.isEmpty else {
@@ -133,6 +155,7 @@ public struct CategoryListFeature: Reducer {
             state.content = .loaded(sortedCategories)
             return .none
         case let .categoriesLoaded(.failure(error)):
+            print("Error : \(error.localizedDescription)")
             state.content = .error(.serverError(.init(error: error)))
             return .none
         case let .onCategoryTapped(category):

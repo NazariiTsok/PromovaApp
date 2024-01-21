@@ -10,6 +10,33 @@
       }
     },
     {
+      "identity" : "realm-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-core.git",
+      "state" : {
+        "revision" : "7227d6a447821c28895daa099b6c7cd4c99d461b",
+        "version" : "13.25.1"
+      }
+    },
+    {
+      "identity" : "realm-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-swift.git",
+      "state" : {
+        "revision" : "836cc4b8619886f979f8961c3f592a82b0741591",
+        "version" : "10.45.3"
+      }
+    },
+    {
+      "identity" : "realmrepository",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kolos65/RealmRepository",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9d84819e4bdf49ef79212176f1f6a66ff223d0aa"
+      }
+    },
+    {
       "identity" : "swift-case-paths",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-case-paths",
