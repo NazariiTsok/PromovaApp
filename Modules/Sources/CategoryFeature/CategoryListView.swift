@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Nazar Tsok on 20.01.2024.
 //
@@ -36,7 +36,25 @@ public struct CategoryListView: View {
             .onAppear {
                 viewStore.send(.view(.onAppear))
             }
+            .alert(
+                store: self.store.scope(
+                    state: \.$destination,
+                    action: CategoryListFeature.Action.destination
+                ),
+                state: /CategoryListFeature.Destination.State.alert,
+                action: CategoryListFeature.Destination.Action.alert
+            )
+            .navigationDestination(
+                store: self.store.scope(
+                    state: \.$destination,
+                    action: CategoryListFeature.Action.destination
+                ),
+                state: /CategoryListFeature.Destination.State.detail,
+                action: CategoryListFeature.Destination.Action.detail,
+                destination: CategoryDetailView.init
+            )
         }
+        
     }
     
     @ViewBuilder
@@ -45,6 +63,9 @@ public struct CategoryListView: View {
             LazyVStack(spacing: 15) {
                 ForEach(categories, id: \.id) { category in
                     CategoryRowView(category: category)
+                        .onTapGesture {
+                            store.send(.view(.onCategoryTapped(category)))
+                        }
                     
                 }
             }
@@ -103,7 +124,7 @@ public struct CategoryListView: View {
     @ViewBuilder
     private func initialStateView() -> some View {
         //TODO: We can show mock list with placeholder shimmering effects when load data
-
+        
         EmptyView()
     }
 }

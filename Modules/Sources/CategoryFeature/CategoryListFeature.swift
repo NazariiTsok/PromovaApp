@@ -15,12 +15,14 @@ import SharedViews
 extension CategoryListFeature {
     public struct Destination: Reducer {
         public enum State: Equatable {
+            case detail(CategoryDetailFeature.State)
             case alert(AlertState<Action.Alert>)
-            
+        
             //Add DetailFeature for navigation destination push
         }
         
         public enum Action: Equatable {
+            case detail(CategoryDetailFeature.Action)
             case alert(Alert)
             
             public enum Alert: Equatable {
@@ -29,7 +31,9 @@ extension CategoryListFeature {
         }
         
         public var body: some ReducerOf<Self> {
-            EmptyReducer()
+            Scope(state: /State.detail, action: /Action.detail) {
+                CategoryDetailFeature()
+            }
         }
     }
 }
@@ -56,9 +60,16 @@ public struct CategoryListFeature: Reducer {
         
         public enum ViewAction: Equatable {
             case onAppear
+            
+            case onCategoryTapped(CategoryModel)
+            
             case loadCategories
             case categoriesLoaded(TaskResult<[CategoryModel]>)
         }
+        
+        //Navigation Actions
+        
+        case navigateTo(CategoryModel)
     }
     
     public init(){
@@ -74,9 +85,15 @@ public struct CategoryListFeature: Reducer {
                 return handleViewAction(action, state: &state)
             case let .destination(action):
                 return handleDestinationAction(action, state: &state)
+            case let .navigateTo(category):
+                state.destination = .detail(CategoryDetailFeature.State(category: category))
+                return .none
             default :
                 return .none
             }
+        }
+        .ifLet(\.$destination, action: /Action.destination) {
+            Destination()
         }
     }
     
@@ -111,7 +128,15 @@ public struct CategoryListFeature: Reducer {
         case let .categoriesLoaded(.failure(error)):
             state.content = .error(.serverError(.init(error: error)))
             return .none
-        default :
+        case let .onCategoryTapped(category):
+            switch category.status {
+            case .free :
+                return Effect.send(.navigateTo(category))
+            case .paid :
+                state.destination = .alert(.adRequest(for: category))
+            case .comingSoon :
+                state.destination = .alert(.comingSoon(for: category))
+            }
             return .none
         }
     }
@@ -133,5 +158,36 @@ public extension ErrorState {
             error: .init(error: error),
             action: .init(label: "Retry", action: .view(.loadCategories))
         )
+    }
+}
+
+extension AlertState where Action == CategoryListFeature.Destination.Action.Alert {
+    static func adRequest(for category: CategoryModel) -> Self {
+        Self {
+            TextState("Premium Access Required")
+        } actions: {
+            
+            ButtonState(action: .showAd(category)) {
+                TextState("Show Ad")
+            }
+            
+            ButtonState(role: .cancel) {
+                TextState("Cancel")
+            }
+        } message: {
+            TextState("Watch an Ad to continue.")
+        }
+    }
+    
+    static func comingSoon(for category: CategoryModel) -> Self {
+        Self {
+            TextState("Coming Soon")
+        } actions: {
+            ButtonState(role: .cancel) {
+                TextState("Ok")
+            }
+        } message: {
+            TextState("Stay Tuned: \(category.title) Will Be Available Shortly")
+        }
     }
 }
