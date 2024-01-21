@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import Extensions
 
 public struct CategoryDetailView: View {
     let store: StoreOf<CategoryDetailFeature>
@@ -16,7 +17,15 @@ public struct CategoryDetailView: View {
     }
     
     public var body: some View {
-        Text("CategoryDetailFeature")
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            ZStack {
+                //PAging for facts elements
+            }
+            .navigationTitle(viewStore.currentTitle)
+            .navigationBarTitleDisplayMode(.inline)
+            .background(Color.main)
+            .toolbarBackground(Color.main, for: .navigationBar)
+        }
     }
 }
 
