@@ -12,6 +12,7 @@ import APIClient
 import Models
 import SharedViews
 import CategoryClient
+import RealmRepository
 
 extension CategoryListFeature {
     public struct Destination: Reducer {
@@ -110,10 +111,9 @@ public struct CategoryListFeature: Reducer {
         switch action {
         case .onAppear:
             if state.content == .initial {
-                return Effect.run { send in
-                    //TODO: await for init RealmRepository,recommend doing this as early as possible in your application lifecycle,
-                    // but our Category client init faster than appDelegate action
-                    try await Task.sleep(for: .seconds(2))
+                return .run { send in
+                    //MARK: Temp init here, but the best practice to do this in delegate(while initializing all clients,db in app)
+                    try await RealmStorage.default.connect()
                     
                     await send(.view(.loadCategories))
                 }

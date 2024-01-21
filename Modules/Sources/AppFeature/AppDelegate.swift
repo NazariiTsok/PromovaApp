@@ -32,13 +32,7 @@ public struct AppDelegateFeature: Reducer {
         Reduce<State, Action> { state, action in
             switch action {
             case .didFinishLaunching: 
-                return .run { send in
-                    await withThrowingTaskGroup(of: Void.self) { group in
-                        group.addTask {
-                           
-                        }
-                    }
-                }
+                return .none
             default :
                 return .none
             }
