@@ -36,7 +36,7 @@ let package = Package(
             name: "CategoryFeature",
             dependencies: [
                 "Models",
-                "APIClient", //TODO: remove from this
+                "APIClient",
                 "Extensions",
                 "SharedViews",
                 "CategoryClient",

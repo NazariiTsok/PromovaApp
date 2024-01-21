@@ -31,11 +31,11 @@ public struct AppDelegateFeature: Reducer {
     public var body: some ReducerOf<Self> {
         Reduce<State, Action> { state, action in
             switch action {
-            case .didFinishLaunching:
+            case .didFinishLaunching: 
                 return .run { send in
                     await withThrowingTaskGroup(of: Void.self) { group in
                         group.addTask {
-                           //TODO: Call RealmWrapepr client to sync with database
+                           
                         }
                     }
                 }

@@ -41,8 +41,6 @@ public struct AsyncImageView : View {
 #if DEBUG
 struct AsyncImageView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        //TODO: For test async later
         AsyncImageView(url: CategoryModel.mock1.image)
     }
 }

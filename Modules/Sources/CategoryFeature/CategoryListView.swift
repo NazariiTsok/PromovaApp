@@ -142,7 +142,7 @@ public struct CategoryListView: View {
     
     @ViewBuilder
     private func initialStateView() -> some View {
-        //TODO: We can show mock list with placeholder shimmering effects when load data
+        //MARK: Initial state view when categories is empty 
         
         EmptyView()
     }
