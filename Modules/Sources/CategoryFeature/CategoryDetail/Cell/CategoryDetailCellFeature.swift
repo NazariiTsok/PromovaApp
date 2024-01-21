@@ -17,23 +17,20 @@ public struct CategoryDetailCellFeature: Reducer {
             self.index
         }
         
+        public var item: FactModel
         public let index: Int
-        public let image: String
-        public let title: String
         
         public init(
             item: FactModel,
             index: Int
         ){
+            self.item = item
             self.index = index
-            self.image = item.image
-            self.title = item.fact
-            
         }
     }
     
     public enum Action: Equatable {
-        
+        case onAppear
     }
     
     public init(){}

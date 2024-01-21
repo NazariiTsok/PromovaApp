@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: Implement Identifiable in CategoryModel for Realm Compatibility
 extension CategoryModel: Identifiable {
     public var id: String {
         self.title

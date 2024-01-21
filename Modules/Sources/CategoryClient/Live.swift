@@ -10,12 +10,6 @@ import Models
 import RealmRepository
 import APIClient
 
-extension CategoryModel: Identifiable {
-    public var id: String {
-        self.title
-    }
-}
-
 public struct CategoryClient : CategoryClientProtocol {
     
     public typealias Model = CategoryModel
@@ -36,17 +30,6 @@ public struct CategoryClient : CategoryClientProtocol {
         let categories = try await apiClient.fetchCategories()
         
         try await upsert(categories)
-//        let allCategories = try await self.getAll()
-//        
-//        
-//        
-//        for category in categories {
-//            if allCategories.contains(where: { $0.title == category.title}) {
-//                continue
-//            }
-//            
-//            try await insert(category)
-//        }
     }
     
     public func getAll() async throws -> [Model] {

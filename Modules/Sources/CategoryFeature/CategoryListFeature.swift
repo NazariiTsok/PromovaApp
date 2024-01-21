@@ -62,12 +62,9 @@ public struct CategoryListFeature: Reducer {
         
         public enum ViewAction: Equatable {
             case onAppear
-            
             case onCategoryTapped(CategoryModel)
-            
             case loadCategories
             case categoriesLoaded(TaskResult<[CategoryModel]>)
-            
         }
         
         case navigateTo(CategoryModel)
@@ -113,10 +110,9 @@ public struct CategoryListFeature: Reducer {
         switch action {
         case .onAppear:
             if state.content == .initial {
-                
-                
-                
                 return Effect.run { send in
+                    //TODO: await for init RealmRepository,recommend doing this as early as possible in your application lifecycle,
+                    // but our Category client init faster than appDelegate action
                     try await Task.sleep(for: .seconds(2))
                     
                     await send(.view(.loadCategories))
@@ -131,18 +127,15 @@ public struct CategoryListFeature: Reducer {
                     for try await categories in categoryClient.observation() {
                         await send(.view(.categoriesLoaded(.success(categories))))
                     }
-                    
                 } catch: { error, send in
                     await send(.view(.categoriesLoaded(.failure(error))))
                 },
                 .run { _  in
                    try await categoryClient.load()
                 }
-                
             )
             .cancellable(id: CancelID.observation, cancelInFlight: true)
         case let .categoriesLoaded(.success(value)):
-            // Early exit if no categories are loaded
             guard !value.isEmpty else {
                 state.content = .initial
                 return .none
@@ -155,7 +148,7 @@ public struct CategoryListFeature: Reducer {
             state.content = .loaded(sortedCategories)
             return .none
         case let .categoriesLoaded(.failure(error)):
-            print("Error : \(error.localizedDescription)")
+            //MARK: We can andle other errors like .failure(URLSession.Errors(....).emptyResponse)
             state.content = .error(.serverError(.init(error: error)))
             return .none
         case let .onCategoryTapped(category):

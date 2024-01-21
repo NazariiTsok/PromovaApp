@@ -29,7 +29,6 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
             try await RealmStorage.default.connect()
         }
         
-        
         self.viewStore.send(.appDelegate(.didFinishLaunching))
         return true
     }

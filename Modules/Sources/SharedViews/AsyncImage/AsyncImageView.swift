@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Nazar Tsok on 21.01.2024.
 //
@@ -10,15 +10,15 @@ import Models
 
 public struct AsyncImageView : View {
     
-    public var url: URL
+    let url: String
     
-    public init(url: URL) {
+    public init(url: String) {
         self.url = url
     }
     
     public var body: some View {
         AsyncImage(
-            url: url
+            url: URL(string: url)
         ) { phase in
             switch phase {
             case .empty:
@@ -26,7 +26,6 @@ public struct AsyncImageView : View {
             case .success(let image):
                 image
                     .resizable()
-                    .scaledToFill()
             case .failure:
                 Image(systemName: "photo.artframe")
                     .resizable()
@@ -38,12 +37,13 @@ public struct AsyncImageView : View {
 }
 
 
+
 #if DEBUG
 struct AsyncImageView_Previews: PreviewProvider {
     static var previews: some View {
         
         //TODO: For test async later
-        AsyncImageView(url: URL(string: "")!)
+        AsyncImageView(url: CategoryModel.mock1.image)
     }
 }
 

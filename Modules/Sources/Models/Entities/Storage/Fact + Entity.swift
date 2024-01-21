@@ -1,6 +1,5 @@
 
 
-
 import Foundation
 import RealmSwift
 
@@ -8,18 +7,6 @@ public final class FactEntity: Object {
     
     @Persisted public var fact: String
     @Persisted public var image: String
-    
-//    public init(
-//        id: String,
-//        fact: String,
-//        image: String
-//    ) {
-//        super.init()
-//        
-//        self.id = id
-//        self.fact = fact
-//        self.image = image
-//    }
 }
 
 // MARK: - Model Extensions for Data Conversion

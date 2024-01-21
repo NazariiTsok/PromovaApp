@@ -11,44 +11,59 @@ import SwiftUI
 import SharedViews
 import Models
 
+extension CategoryDetailCellView {
+    private struct ViewState: Equatable {
+        let itemImageUrl: String
+        let itemTitle: String
+        let itemId: Int
+        
+        init(state: CategoryDetailCellFeature.State){
+            self.itemImageUrl = state.item.image
+            self.itemTitle = state.item.fact
+            self.itemId = state.id
+        }
+    }
+}
+
 public struct CategoryDetailCellView : View {
     
     let store: StoreOf<CategoryDetailCellFeature>
+    
+    @ObservedObject private var viewStore: ViewStore<ViewState,CategoryDetailCellFeature.Action>
     
     public init(
         store: StoreOf<CategoryDetailCellFeature>
     ) {
         self.store = store
+        self.viewStore = ViewStore(store, observe: ViewState.init, send: { $0 })
     }
     
     public var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            GeometryReader { geometry in
-                VStack {
-                    AsyncImageView(url: URL(string: viewStore.image)!)
-                        .frame(height: geometry.size.height * 0.35)
-//                        .aspectRatio(contentMode: .fill)
-//                        .fixedSize(horizontal: false, vertical: true)
-                        .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-                        .clipped()
-                        .padding(10)
+        GeometryReader { geometry in
+            VStack {
+                AsyncImageView(url: viewStore.itemImageUrl)
+                    .frame(height: geometry.size.height * 0.35)
+                    .aspectRatio(contentMode: .fill)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                    .clipped()
+                    .padding(10)
+                
+                HStack {
+                    Text(viewStore.itemTitle)
+                        .padding(.horizontal)
+                        .multilineTextAlignment(.center)
                     
-                    HStack {
-                        Text(viewStore.title)
-                            .padding(.horizontal)
-                            .multilineTextAlignment(.center)
-                        
-                    }
                 }
-                .frame(
-                    width: geometry.size.width,
-                    height: geometry.size.height * 0.65,
-                    alignment : .top
-                )
-                .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
             }
-            .tag(viewStore.id)
+            .frame(
+                width: geometry.size.width,
+                height: geometry.size.height * 0.65,
+                alignment : .top
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         }
+        .tag(viewStore.itemId)
     }
 }
 

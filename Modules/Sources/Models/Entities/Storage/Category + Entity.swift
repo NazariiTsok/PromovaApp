@@ -10,7 +10,6 @@ import RealmSwift
 
 public final class CategoryEntity: Object, Identifiable {
     
-   
     @Persisted(primaryKey: true) public dynamic var id: String
     
     @Persisted public var title: String
@@ -27,28 +26,8 @@ public final class CategoryEntity: Object, Identifiable {
     }
     
     public override class func primaryKey() -> String? {
-           return "id"
-       }
-    
-//    public init(
-//        id: String,
-//        title: String,
-//        categoryDescription: String,
-//        image: String,
-//        order: Int,
-//        status: Status,
-//        facts: RealmSwift.List<FactEntity>
-//    ) {
-//        super.init()
-//        
-//        self.id = id
-//        self.title = title
-//        self.categoryDescription = categoryDescription
-//        self.image = image
-//        self.order = order
-//        self.status = status
-//        self.facts = facts
-//    }
+        return "id"
+    }
 }
 
 // MARK: - Model Extensions for Data Conversion

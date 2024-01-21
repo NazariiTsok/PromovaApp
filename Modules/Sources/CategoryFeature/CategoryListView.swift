@@ -12,55 +12,69 @@ import Models
 import SharedViews
 import Extensions
 
+extension CategoryListView {
+    private struct ViewState: Equatable {
+        
+        var content: ContentState<IdentifiedArrayOf<CategoryModel>, CategoryListFeature.Action>
+        var isAdvertPresented:Bool
+        
+        init(state: CategoryListFeature.State){
+            self.content = state.content
+            self.isAdvertPresented = state.isAdvertPresented
+        }
+    }
+}
+
 public struct CategoryListView: View {
     let store: StoreOf<CategoryListFeature>
     
+    @ObservedObject private var viewStore: ViewStore<ViewState, CategoryListFeature.Action>
+    
     public init(store: StoreOf<CategoryListFeature>) {
         self.store = store
+        self.viewStore = ViewStore(store, observe: ViewState.init, send: { $0 })
     }
     
     public var body: some View {
-        WithViewStore(self.store, observe: { $0 }) { viewStore in
-            ZStack {
-                switch viewStore.content {
-                case .initial:
-                    initialStateView()
-                case .loading:
-                    progressView()
-                case let .loaded(categories):
-                    categoriesList(with: categories)
-                case let .error(errorState):
-                    errorStateView(errorState)
-                }
+        ZStack {
+            switch viewStore.content {
+            case .initial:
+                initialStateView()
+            case .loading:
+                progressView()
+            case let .loaded(categories):
+                categoriesList(with: categories)
+            case let .error(errorState):
+                errorStateView(errorState)
             }
-            .onAppear {
-                viewStore.send(.view(.onAppear))
-            }
-            .alert(
-                store: self.store.scope(
-                    state: \.$destination,
-                    action: CategoryListFeature.Action.destination
-                ),
-                state: /CategoryListFeature.Destination.State.alert,
-                action: CategoryListFeature.Destination.Action.alert
+        }
+        .alert(
+            store: self.store.scope(
+                state: \.$destination,
+                action: CategoryListFeature.Action.destination
+            ),
+            state: /CategoryListFeature.Destination.State.alert,
+            action: CategoryListFeature.Destination.Action.alert
+        )
+        .navigationDestination(
+            store: self.store.scope(
+                state: \.$destination,
+                action: CategoryListFeature.Action.destination
+            ),
+            state: /CategoryListFeature.Destination.State.detail,
+            action: CategoryListFeature.Destination.Action.detail,
+            destination: CategoryDetailView.init
+        )
+        .fullScreenCover(
+            isPresented: viewStore.binding(
+                get: \.isAdvertPresented,
+                send: .adWatched
             )
-            .navigationDestination(
-                store: self.store.scope(
-                    state: \.$destination,
-                    action: CategoryListFeature.Action.destination
-                ),
-                state: /CategoryListFeature.Destination.State.detail,
-                action: CategoryListFeature.Destination.Action.detail,
-                destination: CategoryDetailView.init
-            )
-            .fullScreenCover(
-                isPresented: viewStore.binding(
-                    get: \.isAdvertPresented,
-                    send: .adWatched
-                )
-            ) {
-                ProgressView()
-            }
+        ) {
+            ProgressView()
+        }
+        .onAppear {
+            viewStore.send(.view(.onAppear))
         }
     }
     
@@ -71,13 +85,11 @@ public struct CategoryListView: View {
                 ForEach(categories, id: \.id) { category in
                     CategoryRowView(category: category)
                         .onTapGesture {
-                            store.send(.view(.onCategoryTapped(category)))
+                            viewStore.send(.view(.onCategoryTapped(category)))
                         }
-                    
                 }
             }
             .padding(.all)
-            
         }
         .navigationTitle("Categories")
         .navigationBarTitleDisplayMode(.inline)
