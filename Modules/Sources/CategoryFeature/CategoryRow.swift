@@ -25,20 +25,13 @@ public struct CategoryRowView: View {
         ZStack {
             HStack(alignment: .top, spacing: .zero) {
                 AsyncImageView(url: category.image)
-                    .aspectRatio(contentMode: .fill)
+                    .scaledToFill()
                     .frame(width: 121, height: 90)
                     .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                     .clipped()
                 
+                categoryInfo
                 
-                VStack(alignment : .leading) {
-                    categoryInfo
-                    
-                    Spacer()
-                    
-                    premiumStatusView
-                }
-                .padding(.horizontal, 10)
             }
             .padding([.top, .leading, .bottom], 5)
         }
@@ -52,7 +45,9 @@ public struct CategoryRowView: View {
         .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         .shadow(color: .black.opacity(0.2), radius: 2, x: 0, y: 2)
         .overlay(alignment: .trailing) {
-            comingSoonOverlay
+            if category.status == .comingSoon {
+                comingSoonOverlay
+            }
         }
     }
     
@@ -65,32 +60,36 @@ public struct CategoryRowView: View {
             Text(category.description)
                 .font(.caption.weight(.regular))
                 .foregroundStyle(.black.opacity(0.5))
+            
+            Spacer()
+            
+            if category.status == .paid {
+                premiumStatusView
+            }
         }
         .lineLimit(2)
+        .padding(.horizontal, 10)
     }
     
     @ViewBuilder
     private var premiumStatusView: some View {
-        if category.status == .paid {
-            HStack(alignment: .lastTextBaseline, spacing: 3){
-                Image(systemName: "lock.fill")
-                    .resizable()
-                    .frame(width: 10, height: 12)
-                
-                Text("Premium")
-                    .font(.body)
-            }
-            .foregroundStyle(Color.premium)
+        HStack(alignment: .lastTextBaseline, spacing: 3){
+            Image(systemName: "lock.fill")
+                .resizable()
+                .frame(width: 10, height: 12)
+            
+            Text("Premium")
+                .font(.body)
         }
+        .foregroundStyle(Color.premium)
+        
     }
     
     @ViewBuilder
     private var comingSoonOverlay: some View {
-        if category.status == .comingSoon {
-            Image("coming-soon")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        }
+        Image("coming-soon")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 

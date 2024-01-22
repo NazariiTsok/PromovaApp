@@ -42,14 +42,13 @@ public struct CategoryDetailCellView : View {
         GeometryReader { geometry in
             VStack {
                 AsyncImageView(url: viewStore.itemImageUrl)
-                    .frame(
-                        height: geometry.size.height * 0.35
-                    )
+                    .frame(height: geometry.size.height * 0.35)
                     .scaledToFill()
                     .fixedSize(horizontal: false, vertical: true)
                     .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                     .clipped()
-                    .padding(.all, 10)
+                    .padding(.all)
+                    
                 
                 HStack {
                     Text(viewStore.itemTitle)
